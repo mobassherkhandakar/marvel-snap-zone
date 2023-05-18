@@ -1,9 +1,9 @@
 import React from "react";
-import { FaBeer, FaRegCopyright } from 'react-icons/fa';
+import { FaRegCopyright } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <div>
+    <div className="bg-base-200">
       <footer className="footer p-10 bg-base-200 text-base-content">
         <div>
           <svg

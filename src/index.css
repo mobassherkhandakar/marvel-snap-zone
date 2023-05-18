@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .err {
+    @apply text-red-500 text-sm m-0;
+  }
+  .error::before {
+    content: "🚫";
+  }
+}

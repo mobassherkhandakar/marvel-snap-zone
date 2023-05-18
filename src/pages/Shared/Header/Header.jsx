@@ -7,7 +7,7 @@ const Header = () => {
   const navItems = (
     <>
       <li>
-        <Link>Home</Link>
+        <Link to="/">Home</Link>
       </li>
 
       <li>
@@ -24,11 +24,11 @@ const Header = () => {
         </li>
       ) : null}
       <li>
-        <Link>Blog</Link>
+        <Link to="blog">Blog</Link>
       </li>
       {!user ? (
         <li>
-          <Link>Login</Link>
+          <Link to="login">Login</Link>
         </li>
       ) : null}
     </>
