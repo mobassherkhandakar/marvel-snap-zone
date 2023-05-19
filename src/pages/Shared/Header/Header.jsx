@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user,logOutUser } = useContext(AuthContext);
   const navItems = (
     <>
       <li>
@@ -92,7 +92,7 @@ const Header = () => {
         </div>
       </label>
       <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-24">
-        <li><a>Logout</a></li>
+        <li><a onClick={logOutUser}>Logout</a></li>
       </ul>
     </div>
     </div>

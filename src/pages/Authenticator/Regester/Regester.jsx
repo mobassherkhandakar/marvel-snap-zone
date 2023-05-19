@@ -5,7 +5,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
 const Regester = () => {
-  const {CreateUser,setUser} = useContext(AuthContext)
+  const {CreateUser} = useContext(AuthContext)
   const [error, setError] = useState()
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -20,7 +20,6 @@ const Regester = () => {
       const user = result.user
       console.log(user);
       updateUserInf(user, name, photo)
-      setUser(user)
     })
     .catch(error=>{
       console.log(error.message);
