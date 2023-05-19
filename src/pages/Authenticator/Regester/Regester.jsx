@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import regester from "../../../assets/38435-register.json";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Regester = () => {
   const {CreateUser} = useContext(AuthContext)
@@ -55,7 +55,7 @@ const Regester = () => {
           </div>
           <div className="card  w-1/2 max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
-              <h1 className="text-5xl font-bold">Regester now!</h1>
+              <h1 className="text-3xl font-bold">Regester now!</h1>
               <form onSubmit={handleSubmit}>
                 <div className="form-control">
                   <label className="label">
@@ -111,6 +111,12 @@ const Regester = () => {
                 </div>
                 {error && <span className="err">{error}</span>}
               </form>
+              <p className="text-center">
+                Alreday have an a accunt ?{" "}
+                <Link className="text-orange-600 font-bold" to="/login">
+                  Sign In
+                </Link>{" "}
+              </p>
             </div>
           </div>
         </div>
