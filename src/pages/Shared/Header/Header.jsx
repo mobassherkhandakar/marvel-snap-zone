@@ -11,16 +11,16 @@ const Header = () => {
       </li>
 
       <li>
-        <Link>All Toys</Link>
+        <Link to="alltoy">All Toys</Link>
       </li>
       {user ? (
         <li>
-          <Link>My Toys</Link>
+          <Link to="mytoy">My Toys</Link>
         </li>
       ) : null}
       {user ? (
         <li>
-          <Link>Add Toys</Link>
+          <Link to="addtoy">Add Toys</Link>
         </li>
       ) : null}
       <li>
