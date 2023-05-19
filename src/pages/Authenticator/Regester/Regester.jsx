@@ -3,10 +3,17 @@ import React, { useContext, useState } from "react";
 import regester from "../../../assets/38435-register.json";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Regester = () => {
   const {CreateUser} = useContext(AuthContext)
   const [error, setError] = useState()
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target;
@@ -14,12 +21,14 @@ const Regester = () => {
     const password = form.password.value;
     const email = form.email.value;
     const photo = form.photo.value;
+    setError('')
 
     CreateUser(email, password)
     .then(result=>{
       const user = result.user
       console.log(user);
       updateUserInf(user, name, photo)
+      navigate(from, {replace: true})
     })
     .catch(error=>{
       console.log(error.message);

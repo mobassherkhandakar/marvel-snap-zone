@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../../assets/93385-login.json";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Login = () => {
+  const {loginUser, loginWithGoogle} = useContext(AuthContext)
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [email, setEmail] = useState("");
@@ -37,6 +39,32 @@ const Login = () => {
       setPasswordError("");
     }
   };
+  const submitHandlar = (e) =>{
+    e.preventDefault()
+    setError('')
+    loginUser(email, password)
+    .then(result =>{
+      const loginUser = result.user;
+      console.log(loginUser);
+      navigate(from, {replace: true})
+    })
+    .catch(error=> {
+      console.log(error.message);
+      setError(error.message)
+    })
+  }
+  const googleLoginHandler = () =>{
+    setError('')
+    loginWithGoogle()
+    .then(result=>{
+      console.log(result.user);
+      navigate(from, {replace: true})
+    })
+    .catch(error=> setError(error.message))
+
+  }
+
+
   return (
     <>
       <div className="hero min-h-screen bg-base-200">
@@ -47,7 +75,7 @@ const Login = () => {
           <div className="card  w-1/2 max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
               <h1 className="text-5xl font-bold">Login now!</h1>
-              <form>
+              <form onSubmit={submitHandlar}>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
@@ -77,11 +105,7 @@ const Login = () => {
                   {passwordError && (
                     <span className="err mt-2">{passwordError}</span>
                   )}
-                  <label className="label">
-                    <a className="label-text-alt link link-hover">
-                      Forgot password?
-                    </a>
-                  </label>
+                  
                 </div>
                 <div className="form-control mt-6">
                   <button type="submit" className="btn btn-primary">
@@ -98,7 +122,7 @@ const Login = () => {
               </p>
               <div className="divider">OR</div>
               <div className="text-center">
-                <button className="btn">
+                <button onClick={googleLoginHandler} className="btn">
                   <FcGoogle className="text-3xl" />
                 </button>
               </div>
