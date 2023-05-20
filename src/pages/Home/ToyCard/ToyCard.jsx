@@ -1,24 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ToyCard = ({ toy }) => {
   const { user } = useContext(AuthContext);
   console.log(user);
-  const {_id, toyName, photo, reating, price } = toy;
+  const { _id, toyName, photo, reating, price } = toy;
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 800,
+      easing: "ease-in-out",
+      delay: 200,
+    });
+  }, []);
   const handleTost = () => {
-    console.log('click');
-    toast.error("You have to log in first to view details");
     if (!user?.email) {
-      console.log('object');
+      toast.error("You have to log in first to view details");
     }
   };
   return (
     <>
-      <div className="card border-b-4 border-red-700 card-compact w-96 object-center h-96 bg-base-100 shadow-xl">
+      <div  data-aos="flip-left" className="card border-b-4 border-red-700 card-compact w-96 object-center h-96 bg-base-100 shadow-xl">
         <figure>
           <img className="w-screen" src={photo} alt="Shoes" />
         </figure>
@@ -37,9 +45,13 @@ const ToyCard = ({ toy }) => {
             {reating}
           </p>
           <div className="card-actions justify-end">
-            <button onClick={handleTost} className="btn btn-primary">
-              <Link to={`/toydeteil/${_id}`}>View Details</Link>
-            </button>
+            <Link
+              className="btn btn-primary"
+              onClick={handleTost}
+              to={`/toydeteil/${_id}`}
+            >
+              View Details
+            </Link>
           </div>
         </div>
       </div>

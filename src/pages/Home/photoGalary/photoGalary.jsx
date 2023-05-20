@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const PhotoGalary = () => {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 800,
+      easing: "ease-in-out",
+      delay: 200,
+    });
+  }, []);
   const photos = [
     {
       url: "https://img.freepik.com/free-photo/small-red-car-toy-kid-child-playing-with-it_114579-7239.jpg?size=626&ext=jpg&uid=R101577347&ga=GA1.1.2134551033.1665579690&semt=ais",
@@ -24,7 +34,7 @@ const PhotoGalary = () => {
   return (
     <div className="bg-base-200 py-4 my-con my-5">
       <h1 className="text-center my-4 font-bold text-4xl"> Toy Gaallery</h1>
-      <div className="grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div data-aos="zoom-in" className="grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {photos.map((photo, index) => (
           <div key={index} className="overflow-hidden">
             <img src={photo.url} alt="photo" className="w-full rounded-md h-80" />
