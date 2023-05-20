@@ -9,6 +9,8 @@ import AddToy from "../pages/AddToy/AddToy";
 import MyToy from "../pages/MyToy/MyToy";
 import AllToy from "../pages/AllToy/AllToy";
 import UpdateToy from "../pages/Update/UpdateToy";
+import ToyDEteils from "../pages/ToyDeteils/ToyDEteils";
+import PrivetRouter from "./PrivetRouter";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +54,11 @@ const router = createBrowserRouter([
             `https://toy-marketplace-server-theta-peach.vercel.app/update/${params.id}`
           ),
       },
+      {
+        path: "toydeteil/:id",
+        element: <PrivetRouter> <ToyDEteils/> </PrivetRouter>,
+        loader: ({params})=> fetch(`https://toy-marketplace-server-theta-peach.vercel.app/update/${params.id}`)
+      }
     ],
   },
 ]);

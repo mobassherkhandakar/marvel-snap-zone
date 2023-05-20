@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AllToy = () => {
   const [toys, setToys] = useState([]);
@@ -57,18 +58,9 @@ const AllToy = () => {
                 <td>{toy?.catagory}</td>
                 <td>$ {toy?.price}</td>
                 <td>{toy?.quantity}</td>
-                <td className="btn btn-accent">View Details </td>
+                <td className="btn btn-accent"><Link to={`/toydeteil/${toy?._id}`}>View Details </Link> </td>
               </tr>
             ))}
-            {/* <tr>
-        <th>1</th> 
-        <td>Cy Ganderton</td> 
-        <td>Quality Control Specialist</td> 
-        <td>Littel, Schaden and Vandervort</td> 
-        <td>Canada</td> 
-        <td>12/16/2020</td> 
-        <td>Blue</td>
-      </tr> */}
           </tbody>
         </table>
       </div>

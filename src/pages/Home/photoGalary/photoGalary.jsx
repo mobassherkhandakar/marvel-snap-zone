@@ -1,5 +1,4 @@
 import React from "react";
-import photo from "../../../assets/404.jpg";
 
 const PhotoGalary = () => {
   const photos = [
