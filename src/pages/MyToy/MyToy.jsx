@@ -8,17 +8,18 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 
 const MyToy = () => {
   const { user } = useContext(AuthContext);
+  const [selectedOption, setSelectedOption] = useState("high");
   const [toys, setToys] = useState([]);
   useEffect(() => {
     fetch(
-      `https://toy-marketplace-server-theta-peach.vercel.app/mytoy/${user?.email}`
+      `https://toy-marketplace-server-theta-peach.vercel.app/mytoy/${user?.email}?sort=${selectedOption}`
     )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
         setToys(data);
       });
-  }, [user]);
+  }, [user, selectedOption]);
   const deleteHandler = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -47,11 +48,29 @@ const MyToy = () => {
       }
     });
   };
+
+  const handleSortOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
   // console.log(toys);
   return (
     <div>
       <h1 className="text-center p-5 font-bold text-3xl">MY Toy</h1>
       <div className="overflow-x-auto w-full">
+        <div className="text-end my-4 mr-1">
+          <select
+            value={selectedOption}
+            onChange={handleSortOptionChange}
+            className="select input  input-bordered input-success w-full max-w-xs "
+          >
+            <option disabled selected>
+              Sort By High Price and Low Price!
+            </option>
+            <option value="low">High Price</option>
+            <option value="high">Low Price</option>
+          </select>
+        </div>
         <table className="table w-full">
           {/* head */}
           <thead>
@@ -63,6 +82,7 @@ const MyToy = () => {
               <th>Quantity</th>
               <th>Sub-category</th>
               <th>Reating</th>
+              <th>Price</th>
               <th>description</th>
               <th>Action</th>
               <th>Delete</th>
@@ -99,6 +119,7 @@ const MyToy = () => {
                   ></Rating>
                   {toy?.reating}
                 </td>
+                <td>$ {toy?.price}</td>
                 <td>{toy?.description}</td>
 
                 <td>

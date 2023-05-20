@@ -40,8 +40,8 @@ const AddToy = () => {
     <>
       <div>
         <div className=" min-h-fit py-12 bg-base-200">
-          <div className="hero-content justify-around flex-col lg:flex-row-reverse">
-            <div className="text-center w-1/2 lg:text-left">
+          <div className="flex items-center flex-col lg:flex-row-reverse">
+            <div className="w-1/2 lg:text-left">
               <Player
                 autoplay
                 style={{ height: "100%", width: "100%" }}
@@ -118,6 +118,7 @@ const AddToy = () => {
                         className="input input-bordered"
                         {...register("catagory")}
                       >
+                        <option disabled selected>Sub Catagory</option>
                         <option value="marvel">Marvel</option>
                         <option value="avengers">Avengers</option>
                         <option value="transformers">Transformers</option>
