@@ -116,7 +116,6 @@ const AddToy = () => {
                         className="input input-bordered"
                         {...register("catagory")}
                       >
-                        <option>Action figure</option>
                         <option value="marvel">Marvel</option>
                         <option value="avengers">Avengers</option>
                         <option value="transformers">Transformers</option>
