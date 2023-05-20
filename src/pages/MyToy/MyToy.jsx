@@ -3,6 +3,8 @@ import { RiDeleteBin2Fill } from "react-icons/ri";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const MyToy = () => {
   const { user } = useContext(AuthContext);
@@ -49,28 +51,61 @@ const MyToy = () => {
           {/* head */}
           <thead>
             <tr>
-              <th>Delete</th>
+              <th>no</th>
+              <th>Photo</th>
+              <th>Seller Name</th>
               <th>Toy Name</th>
               <th>Quantity</th>
+              <th>Sub-category</th>
+              <th>Reating</th>
               <th>description</th>
               <th>Action</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
             {/* row 1 */}
             {toys.map((toy, index) => (
               <tr key={index}>
-                <th>
-                  <span onClick={() => deleteHandler(toy._id)}>
-                    <RiDeleteBin2Fill className="text-3xl cursor-pointer" />
-                  </span>
-                </th>
+                <td>{index + 1}</td>
+                <td>
+                  <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                      <div className="mask mask-squircle w-20 h-20">
+                        <img
+                          src={toy?.photo}
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>{toy?.name}</td>
                 <td>{toy?.toyName}</td>
                 <td>{toy?.quantity}</td>
+                <td>{toy?.catagory}</td>
+                <td>
+                  <Rating
+                    placeholderRating={toy?.reating}
+                    emptySymbol={<FaRegStar />}
+                    readonly
+                    placeholderSymbol={<FaStar className="text-yellow-500" />}
+                    fullSymbol={<FaStar />}
+                  ></Rating>
+                  {toy?.reating}
+                </td>
                 <td>{toy?.description}</td>
-                <th>
-                  <Link to={`/update/${toy._id}`}><button className="btn btn-ghost btn-xs">Update</button></Link>
-                </th>
+
+                <td>
+                  <Link to={`/update/${toy._id}`}>
+                    <button className="btn btn-success btn-xs">Update</button>
+                  </Link>
+                </td>
+                <td>
+                  <span onClick={() => deleteHandler(toy._id)}>
+                    <RiDeleteBin2Fill className="text-3xl text-red-700 cursor-pointer" />
+                  </span>
+                </td>
               </tr>
             ))}
           </tbody>

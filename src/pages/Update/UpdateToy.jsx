@@ -1,25 +1,62 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import React from "react";
-import { useForm } from "react-hook-form";
 import up from "../../assets/89106-update.json";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateToy = () => {
   const loadToy = useLoaderData()
-  // console.log(loadToy);
-
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  const navigate = useNavigate()
+  console.log(loadToy);
+  const handleSubmit = e => {
+    e.preventDefault()
+    const from = e.target;
+    const price = from.price.value;
+    const quantity = from.quantity.value;
+    const description = from.description.value;
+    // console.log(price, quantity, description);
+    const update = {
+      price: price,
+      quantity: quantity,
+      description: description
+    }
+    Swal.fire({
+      title: "Do you want to save the changes?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Save",
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        fetch(
+          `http://localhost:5000/update/${loadToy._id}`,
+          {
+            method: "PUT",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(update),
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data. matchedCount) {
+              
+              Swal.fire("Saved!", "", "success");
+              navigate('/mytoy')
+              
+            }
+            
+          });
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
+  }
 
   return (
-    <div>
+    <>
       <div>
         <div className=" min-h-fit py-12 bg-base-200">
           <div className="hero-content justify-around flex-col lg:flex-row-reverse">
@@ -34,7 +71,7 @@ const UpdateToy = () => {
             <div className="card  w-1/2 shadow-2xl bg-base-100">
               <div className="card-body">
                 <h1 className="text-3xl font-bold">Added Toy!</h1>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit}>
                   <div className="grid grid-cols-2 gap-2">
                     <div className="form-control">
                       <label className="label">
@@ -43,7 +80,9 @@ const UpdateToy = () => {
                       <input
                         className="input input-bordered"
                         defaultValue={loadToy?.price}
-                        {...register("price", { required: true })}
+                        type="text"
+                        name="price"
+                        placeholder="price"
                       />
                     </div>
 
@@ -53,7 +92,9 @@ const UpdateToy = () => {
                       </label>
                       <input
                         className="input input-bordered" defaultValue={loadToy?.quantity}
-                        {...register("quantity", { required: true })}
+                        type="text"
+                        placeholder="quantity"
+                        name="quantity"
                       />
                     </div>
                   </div>
@@ -63,7 +104,9 @@ const UpdateToy = () => {
                     </label>
                     <input
                       className="input input-bordered" defaultValue={loadToy?.description}
-                      {...register("description")}
+                      type="text"
+                      name="description"
+                      placeholder="description"
                     />
                   </div>
                   <div className="text-center mt-2">
@@ -79,7 +122,7 @@ const UpdateToy = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
