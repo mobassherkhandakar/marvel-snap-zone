@@ -10,7 +10,9 @@ const MyToy = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/mytoy/${user?.email}`)
+    fetch(
+      `https://toy-marketplace-server-theta-peach.vercel.app/mytoy/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -28,9 +30,12 @@ const MyToy = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/mytoy/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://toy-marketplace-server-theta-peach.vercel.app/mytoy/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

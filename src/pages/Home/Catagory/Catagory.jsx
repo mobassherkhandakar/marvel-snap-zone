@@ -4,10 +4,12 @@ import ToyCard from "../ToyCard/ToyCard";
 
 const Catagory = () => {
   const [activeTab, setActiveTab] = useState("marvel");
-  const [toys, setToys]= useState([])
+  const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/getToyByCategory/${activeTab}`)
+    fetch(
+      `https://toy-marketplace-server-theta-peach.vercel.app/getToyByCategory/${activeTab}`
+    )
       .then((res) => res.json())
       .then((result) => {
         setToys(result);
@@ -55,7 +57,7 @@ const Catagory = () => {
         </div>
         <div className="grid grid-cols-1 mt-12 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {toys?.map((toy) => (
-            <ToyCard toy={toy}></ToyCard>
+            <ToyCard key={toy._id} toy={toy}></ToyCard>
           ))}
         </div>
       </div>

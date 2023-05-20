@@ -5,11 +5,11 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateToy = () => {
-  const loadToy = useLoaderData()
-  const navigate = useNavigate()
+  const loadToy = useLoaderData();
+  const navigate = useNavigate();
   console.log(loadToy);
-  const handleSubmit = e => {
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const from = e.target;
     const price = from.price.value;
     const quantity = from.quantity.value;
@@ -18,8 +18,8 @@ const UpdateToy = () => {
     const update = {
       price: price,
       quantity: quantity,
-      description: description
-    }
+      description: description,
+    };
     Swal.fire({
       title: "Do you want to save the changes?",
       showDenyButton: true,
@@ -30,7 +30,7 @@ const UpdateToy = () => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         fetch(
-          `http://localhost:5000/update/${loadToy._id}`,
+          `https://toy-marketplace-server-theta-peach.vercel.app/update/${loadToy._id}`,
           {
             method: "PUT",
             headers: {
@@ -41,19 +41,16 @@ const UpdateToy = () => {
         )
           .then((res) => res.json())
           .then((data) => {
-            if (data. matchedCount) {
-              
+            if (data.matchedCount) {
               Swal.fire("Saved!", "", "success");
-              navigate('/mytoy')
-              
+              navigate("/mytoy");
             }
-            
           });
       } else if (result.isDenied) {
         Swal.fire("Changes are not saved", "", "info");
       }
     });
-  }
+  };
 
   return (
     <>
@@ -91,7 +88,8 @@ const UpdateToy = () => {
                         <span className="label-text">Quantity</span>
                       </label>
                       <input
-                        className="input input-bordered" defaultValue={loadToy?.quantity}
+                        className="input input-bordered"
+                        defaultValue={loadToy?.quantity}
                         type="text"
                         placeholder="quantity"
                         name="quantity"
@@ -103,7 +101,8 @@ const UpdateToy = () => {
                       <span className="label-text">Description</span>
                     </label>
                     <input
-                      className="input input-bordered" defaultValue={loadToy?.description}
+                      className="input input-bordered"
+                      defaultValue={loadToy?.description}
                       type="text"
                       name="description"
                       placeholder="description"

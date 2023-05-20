@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const AddToy = () => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -15,22 +15,22 @@ const AddToy = () => {
   } = useForm();
   const onSubmit = (data) => {
     const post = data;
-    fetch("http://localhost:5000/addedToy", {
+    fetch("https://toy-marketplace-server-theta-peach.vercel.app/addedToy", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(post)
+      body: JSON.stringify(post),
     })
       .then((res) => res.json())
       .then((data) => {
-        if(data?.insertedId){
+        if (data?.insertedId) {
           Swal.fire({
-            icon: 'success',
-            title: 'Your work has been saved',
+            icon: "success",
+            title: "Your work has been saved",
             showConfirmButton: false,
-            timer: 1500
-          })
+            timer: 1500,
+          });
         }
         console.log(data);
       });
@@ -68,7 +68,8 @@ const AddToy = () => {
                         <span className="label-text">Seller Name</span>
                       </label>
                       <input
-                        className="input input-bordered" defaultValue={user?.displayName}
+                        className="input input-bordered"
+                        defaultValue={user?.displayName}
                         {...register("name", { required: true })}
                       />
                     </div>
@@ -77,7 +78,8 @@ const AddToy = () => {
                         <span className="label-text">Email</span>
                       </label>
                       <input
-                        className="input input-bordered" value={user?.email}
+                        className="input input-bordered"
+                        value={user?.email}
                         {...register("email", { required: true })}
                       />
                     </div>

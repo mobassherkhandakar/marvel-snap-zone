@@ -4,7 +4,6 @@ import Rating from "react-rating";
 
 const ToyCard = ({ toy }) => {
   const { toyName, photo, reating, price } = toy;
-  console.log(toy);
   return (
     <>
       <div className="card border-b-4 border-red-700 card-compact w-96 object-center h-96 bg-base-100 shadow-xl">

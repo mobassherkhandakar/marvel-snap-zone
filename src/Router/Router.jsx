@@ -18,39 +18,42 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home/>
+        element: <Home />,
       },
       {
         path: "login",
-        element: <Login/>
+        element: <Login />,
       },
       {
         path: "regester",
-        element: <Regester/>
+        element: <Regester />,
       },
       {
         path: "blog",
-        element: <Blog/>
+        element: <Blog />,
       },
       {
         path: "addtoy",
-        element: <AddToy/>
+        element: <AddToy />,
       },
       {
         path: "mytoy",
-        element: <MyToy/>
+        element: <MyToy />,
       },
       {
         path: "alltoy",
-        element: <AllToy/>
+        element: <AllToy />,
       },
       {
-        path: '/update/:id',
-        element: <UpdateToy/>,
-        loader: ({params})=> fetch(`http://localhost:5000/update/${params.id}`)
-      }
+        path: "/update/:id",
+        element: <UpdateToy />,
+        loader: ({ params }) =>
+          fetch(
+            `https://toy-marketplace-server-theta-peach.vercel.app/update/${params.id}`
+          ),
+      },
     ],
-  }
+  },
 ]);
 
-export default router
+export default router;
