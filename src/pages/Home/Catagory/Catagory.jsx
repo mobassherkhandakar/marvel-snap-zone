@@ -27,14 +27,6 @@ const Catagory = () => {
           <div className="text-center w-full m-auto">
             <div className="tabs flex justify-center  items-center">
               <div
-                onClick={() => handleTabClick("All")}
-                className={`tab-active  rounded-md cursor-pointer mr-1 p-2 ${
-                  activeTab == "All" ? " bg-red-600 text-white" : ""
-                }`}
-              >
-                All
-              </div>
-              <div
                 onClick={() => handleTabClick("marvel")}
                 className={`tab-active rounded-md cursor-pointer mr-1 p-2 ${
                   activeTab == "marvel" ? " bg-red-600 text-white" : ""

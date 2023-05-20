@@ -65,22 +65,9 @@ const Header = () => {
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           {navItems}
-          {/* <li>
-            <div className="avatar">
-              <div className="w-11 rounded-full">
-                {user ? (
-                  <img title={user?.displayName} src={user?.photoURL} />
-                ) : (
-                  <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" />
-                )}
-              </div>
-            </div>
-          </li> */}
+          
         </ul>
       </div>
-      {/* <div className="navbar-end w-16 md:hidden lg:hidden">
-        
-      </div> */}
       <div className="dropdown  dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-16 lg:text-end  rounded-full">
