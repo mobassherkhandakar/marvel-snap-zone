@@ -8,7 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='max-w-6xl mx-auto'>
+  <div className='my-con'>
   <AuthProvider>
     <ToastContainer/>
     <RouterProvider router={router}/>
