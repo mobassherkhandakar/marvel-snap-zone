@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyToy = () => {
   const { user } = useContext(AuthContext);
@@ -68,7 +69,7 @@ const MyToy = () => {
                 <td>{toy?.quantity}</td>
                 <td>{toy?.description}</td>
                 <th>
-                  <button className="btn btn-ghost btn-xs">Update</button>
+                  <Link to={`/update/${toy._id}`}><button className="btn btn-ghost btn-xs">Update</button></Link>
                 </th>
               </tr>
             ))}
