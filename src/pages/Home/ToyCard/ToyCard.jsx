@@ -26,7 +26,7 @@ const ToyCard = ({ toy }) => {
   };
   return (
     <>
-      <div  data-aos="flip-left" className="card mx-auto border-b-4 border-red-700 card-compact w-96 object-center h-96 bg-base-100 shadow-xl">
+      <div  data-aos="flip-left" className="card mx-auto border-b-4 border-red-700 card-compact w-full object-center h-96 bg-base-100 shadow-xl">
         <figure>
           <img className="w-screen" src={photo} alt="Shoes" />
         </figure>
