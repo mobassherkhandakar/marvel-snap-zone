@@ -5,6 +5,7 @@ import useTitle from "../../Hooks/useSetTitle";
 const AllToy = () => {
   useTitle('AllToy')
   const [toys, setToys] = useState([]);
+  const [showAll, setShowAll] = useState(false)
   const [search, setSearch] = useState("");
   useEffect(() => {
     fetch("https://toy-marketplace-server-theta-peach.vercel.app/allToy")
@@ -24,7 +25,9 @@ const AllToy = () => {
         setToys(data);
       });
   };
-  // console.log(search);
+  const handelShowAll =()=> {
+    setShowAll(true)
+  }
   return (
     <div>
       <h1 className="text-center p-5 font-bold text-3xl">All Toy</h1>
@@ -52,7 +55,7 @@ const AllToy = () => {
             </tr>
           </thead>
           <tbody>
-            {toys.map((toy, index) => (
+            {toys?.slice(0, showAll ? 100 : 20).map((toy, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{toy?.name}</td>
@@ -65,6 +68,11 @@ const AllToy = () => {
             ))}
           </tbody>
         </table>
+        <div className="text-center mt-5">
+        {
+          !showAll && <span onClick={handelShowAll}><button className="btn btn-primary">Show More</button></span>
+        }
+        </div>
       </div>
     </div>
   );
