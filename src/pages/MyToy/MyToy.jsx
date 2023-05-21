@@ -10,18 +10,29 @@ import useTitle from "../../Hooks/useSetTitle";
 const MyToy = () => {
   const { user } = useContext(AuthContext);
   useTitle('MyToy')
-  const [selectedOption, setSelectedOption] = useState("high");
+  const [selectedOption, setSelectedOption] = useState("asc");
   const [toys, setToys] = useState([]);
-  useEffect(() => {
-    fetch(
-      `https://toy-marketplace-server-theta-peach.vercel.app/mytoy/${user?.email}?sort=${selectedOption}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
+  
+useEffect(() => {
+    let sortValue = "desc";
+    if (selectedOption === "asc") {
+      sortValue = "asc";
+    }
+
+    const fetchData = async () => {
+      console.log(sortValue);
+      try {
+        const res = await fetch(`https://toy-marketplace-server-theta-peach.vercel.app/mytoy/${user?.email}?sort=${selectedOption}`);
+        const data = await res.json();
         setToys(data);
-      });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
   }, [user, selectedOption]);
+
   const deleteHandler = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -69,8 +80,8 @@ const MyToy = () => {
             <option disabled selected>
               Sort By High Price and Low Price!
             </option>
-            <option value="low">Descending </option>
-            <option value="high">Ascending </option>
+            <option value="desc">Descending </option>
+            <option value="asc">Ascending </option>
           </select>
         </div>
         <table className="table w-full">
