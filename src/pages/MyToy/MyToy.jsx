@@ -69,8 +69,8 @@ const MyToy = () => {
             <option disabled selected>
               Sort By High Price and Low Price!
             </option>
-            <option value="low">High Price</option>
-            <option value="high">Low Price</option>
+            <option value="low">Descending </option>
+            <option value="high">Ascending </option>
           </select>
         </div>
         <table className="table w-full">
