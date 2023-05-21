@@ -13,10 +13,10 @@ const Contact = () => {
       <div className="my-10 py-8">
         <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
-            <h2 className="mt-2 text-4xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-2 mx-auto text-4xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
               Contact with us
             </h2>
-            <p className="text-base px-20 text-white font-semibold tracking-wide ">
+            <p className="text-base mx-auto lg:px-20 text-white font-semibold tracking-wide ">
               We value your feedback and are always happy to assist you. If you
               have any questions, comments, or suggestions, please don not
               hesitate to reach out to us. Here are the various ways you can
