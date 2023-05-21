@@ -13,22 +13,22 @@ const PhotoGalary = () => {
   }, []);
   const photos = [
     {
-      url: "https://img.freepik.com/free-photo/small-red-car-toy-kid-child-playing-with-it_114579-7239.jpg?size=626&ext=jpg&uid=R101577347&ga=GA1.1.2134551033.1665579690&semt=ais",
+      url: "https://img.freepik.com/premium-photo/cyberpunk-warrior-man-futuristic-soldier-3d-render-illustration_691560-6127.jpg?size=626&ext=jpg&uid=R101577347&ga=GA1.2.2134551033.1665579690&semt=sph",
     },
     {
-      url: "https://img.freepik.com/free-photo/kid-playing-home_23-2148131061.jpg?size=626&ext=jpg&uid=R101577347&ga=GA1.1.2134551033.1665579690&semt=ais",
+      url: "https://img.freepik.com/free-vector/robot-transformer-form-android-car-isolated-vector-cartoon-illustration-futuristic-cyborg-mechanical-soldier-cyborg-character_107791-3054.jpg?size=626&ext=jpg&uid=R101577347&ga=GA1.1.2134551033.1665579690&semt=sph",
     },
     {
-      url: "https://img.freepik.com/premium-photo/car-gift-concept-human-holding-hands-palm-toy-car-with-red-ribbon-yellow-background-top-view-flat-lay-composition-best-offer-cars-sale-rent-template-presentation-show-vehicle_94095-150.jpg?size=626&ext=jpg&uid=R101577347&ga=GA1.2.2134551033.1665579690&semt=ais",
+      url: "https://img.freepik.com/free-vector/red-robot-transformer-alien-invader-spaceship_107791-510.jpg?size=626&ext=jpg&uid=R101577347&ga=GA1.1.2134551033.1665579690&semt=sph",
     },
     {
-      url: "https://img.freepik.com/free-vector/boy-driving-mini-car-toy-white-background_1308-76150.jpg?size=626&ext=jpg&uid=R101577347&ga=GA1.2.2134551033.1665579690&semt=ais",
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJ2YR9uvjSE9BZON02t4Zpl5x4jWbtnlvNw&usqp=CAU",
     },
     {
-      url: "https://img.freepik.com/premium-photo/father-son-hands-toys_23-2148511208.jpg?size=626&ext=jpg&uid=R101577347&ga=GA1.2.2134551033.1665579690&semt=ais",
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr2TElFZDB37MlNXwtnBtHA5rYntMcwzuY8w&usqp=CAU",
     },
     {
-      url: "https://img.freepik.com/free-photo/high-angle-siblings-playing-with-toys_23-2148355142.jpg?size=626&ext=jpg&uid=R101577347&ga=GA1.2.2134551033.1665579690&semt=ais",
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIJKpK8qBZw_xk3UD1-sbLeCDf8IC8kK5_Hg&usqp=CAU",
     }
   ];
   return (
