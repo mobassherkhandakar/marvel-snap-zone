@@ -1,5 +1,5 @@
 import React from "react";
-import { FaRegCopyright } from 'react-icons/fa';
+import { FaEnvelopeOpen, FaMapMarkerAlt, FaPhone, FaRegCopyright, FaVoicemail } from 'react-icons/fa';
 import logo from '../../../assets/download.png'
 
 const Footer = () => {
@@ -11,7 +11,10 @@ const Footer = () => {
           <p>
               MARVEL-Snap-Zone Ltd.
             <br />
-            Providing reliable tech since 1992
+            Address:
+            <span className="flex gap-3 items-center"><FaPhone/>  +8801937007185</span>
+            <span className="flex gap-3 items-center"><FaEnvelopeOpen/>  mobassherkhandakar@gmail.com</span>
+            <span className="flex gap-3 items-center"><FaMapMarkerAlt/>  Sattati,Purbhadhala,Netrokona</span>
           </p>
         </div>
         <div>

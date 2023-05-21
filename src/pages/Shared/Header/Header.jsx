@@ -27,11 +27,6 @@ const Header = () => {
       <li>
         <Link to="blog">Blog</Link>
       </li>
-      {!user ? (
-        <li>
-          <Link to="login">Login</Link>
-        </li>
-      ) : null}
     </>
   );
   return (
