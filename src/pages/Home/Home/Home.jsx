@@ -4,6 +4,7 @@ import PhotoGalary from '../photoGalary/photoGalary';
 import Catagory from '../Catagory/Catagory';
 import useTitle from '../../../Hooks/useSetTitle';
 import Sponser from '../Sponser/Sponser';
+import Contact from '../Contract/Contact';
 
 const Home = () => {
   useTitle("Home")
@@ -13,6 +14,7 @@ const Home = () => {
       <PhotoGalary/>
       <Catagory/>
       <Sponser/>
+      <Contact/>
     </div>
   );
 };

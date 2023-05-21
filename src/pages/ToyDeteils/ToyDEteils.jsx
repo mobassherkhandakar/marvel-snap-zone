@@ -4,12 +4,12 @@ import post from "../../assets/56438-man-with-task-list.json";
 import { useLoaderData } from "react-router-dom";
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
+import useTitle from "../../Hooks/useSetTitle";
 
 const ToyDEteils = () => {
   useTitle('ToyDeteils')
   const { photo, toyName, reating, price, name, email, quantity, description } =
     useLoaderData();
-  // console.log(loadData);
 
   return (
     <div>
