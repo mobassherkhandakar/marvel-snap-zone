@@ -5,9 +5,11 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
+import useTitle from "../../Hooks/useSetTitle";
 
 const MyToy = () => {
   const { user } = useContext(AuthContext);
+  useTitle('MyToy')
   const [selectedOption, setSelectedOption] = useState("high");
   const [toys, setToys] = useState([]);
   useEffect(() => {

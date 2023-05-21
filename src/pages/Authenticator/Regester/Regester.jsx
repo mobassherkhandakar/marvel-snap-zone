@@ -4,11 +4,13 @@ import regester from "../../../assets/38435-register.json";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useTitle from "../../../Hooks/useSetTitle";
 
 const Regester = () => {
   const {CreateUser} = useContext(AuthContext)
   const [error, setError] = useState()
   const navigate = useNavigate();
+  useTitle('Regester')
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";

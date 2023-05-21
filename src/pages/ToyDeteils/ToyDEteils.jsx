@@ -6,6 +6,7 @@ import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
 
 const ToyDEteils = () => {
+  useTitle('ToyDeteils')
   const { photo, toyName, reating, price, name, email, quantity, description } =
     useLoaderData();
   // console.log(loadData);

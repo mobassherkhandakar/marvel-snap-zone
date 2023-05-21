@@ -4,10 +4,12 @@ import login from "../../../assets/93385-login.json";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import useTitle from "../../../Hooks/useSetTitle";
 
 const Login = () => {
   const {loginUser, loginWithGoogle} = useContext(AuthContext)
   const [password, setPassword] = useState("");
+  useTitle('Login')
   const [passwordError, setPasswordError] = useState("");
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");

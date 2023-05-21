@@ -3,9 +3,11 @@ import React from "react";
 import up from "../../assets/89106-update.json";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useSetTitle";
 
 const UpdateToy = () => {
   const loadToy = useLoaderData();
+  useTitle('UpdateToy')
   const navigate = useNavigate();
   console.log(loadToy);
   const handleSubmit = (e) => {

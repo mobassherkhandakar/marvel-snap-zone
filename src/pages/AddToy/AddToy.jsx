@@ -4,9 +4,11 @@ import { useForm } from "react-hook-form";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useTitle from "../../Hooks/useSetTitle";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
+  useTitle('AddToy')
   const {
     register,
     handleSubmit,

@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, useRouteError } from "react-router-dom";
 import errorPic from "../../assets/404.jpg"
+import useTitle from "../../Hooks/useSetTitle";
 
 const ErrorPage = () => {
   const { error, status } = useRouteError();
+  useTitle('ErrorPage')
 
   return (
     <section className="flex items-center h-screen p-16 mb-10 bg-gray-100 text-gray-900">
