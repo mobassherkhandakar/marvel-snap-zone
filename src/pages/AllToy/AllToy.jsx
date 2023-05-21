@@ -35,7 +35,7 @@ const AllToy = () => {
         <input
           onChange={(e) => setSearch(e.target.value)}
           type="text"
-          className="p-2 mr-2 input input-bordered"
+          className="p-2 mr-2 input input-bordered input-success"
         />
         <button onClick={handleSearch} className="btn btn-info">
           Search
@@ -70,7 +70,7 @@ const AllToy = () => {
         </table>
         <div className="text-center mt-5">
         {
-          !showAll && <span onClick={handelShowAll}><button className="btn btn-primary">Show More</button></span>
+          !showAll && <span onClick={handelShowAll}><button className="btn btn-info">Show More</button></span>
         }
         </div>
       </div>
