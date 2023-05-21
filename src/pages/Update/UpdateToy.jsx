@@ -18,7 +18,7 @@ const UpdateToy = () => {
     const description = from.description.value;
     // console.log(price, quantity, description);
     const update = {
-      price: price,
+      price: parseFloat(price),
       quantity: quantity,
       description: description,
     };
