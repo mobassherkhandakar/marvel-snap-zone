@@ -6,11 +6,10 @@ const Banner = () => {
     <div id="slide1" className="carousel-item relative w-full">
       <img src="https://wallpapers.com/images/hd/4k-marvel-digital-cartoon-t9z4pnuivn6488jq.jpg" className="w-full rounded-xl" />
       <div className="absolute flex items-center rounded-xl h-full left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-        <div className="text-white space-y-7 pl-12 w-1/2">
+        <div className="text-white space-y-7  w-1/2">
           <h2 className="font-bold text-4xl">"Welcome to Snap-Zone: A World of Imagination and Play!"</h2>
-          <p>
-            There are many variations of passages of available, but the
-            majority have suffered alteration in some form
+          <p className="text-xl text-gray-400">
+            "Unleash the Power of Imagination with Action Figures Galore! Dive into a World of Heroes and Villains, where Epic Battles and Heroic Adventures Await. From Iconic Superheroes to Fearsome Monsters, Discover a Vast Collection of Action Figures that Bring Excitement and Imagination to Life. Get Ready to Play, Imagine, and Conquer!"
           </p>
           <div>
           <button className="btn btn-active bg-[#FF3811] mr-5">Discover More</button>
@@ -32,8 +31,7 @@ const Banner = () => {
         <div className="text-white space-y-7 pl-12 w-1/2">
           <h2 className="font-bold text-4xl">"Welcome to Snap-Zone: A World of Imagination and Play!"</h2>
           <p>
-            There are many variations of passages of available, but the
-            majority have suffered alteration in some form
+            "Unleash the Power of Imagination with Action Figures Galore! Dive into a World of Heroes and Villains, where Epic Battles and Heroic Adventures Await. From Iconic Superheroes to Fearsome Monsters, Discover a Vast Collection of Action Figures that Bring Excitement and Imagination to Life. Get Ready to Play, Imagine, and Conquer!"
           </p>
           <div>
           <button className="btn btn-active bg-[#FF3811] mr-5">Discover More</button>
@@ -55,8 +53,7 @@ const Banner = () => {
         <div className="text-white space-y-7 pl-12 w-1/2">
           <h2 className="font-bold text-4xl">"Welcome to Snap-Zone: A World of Imagination and Play!"</h2>
           <p>
-            There are many variations of passages of available, but the
-            majority have suffered alteration in some form
+            "Unleash the Power of Imagination with Action Figures Galore! Dive into a World of Heroes and Villains, where Epic Battles and Heroic Adventures Await. From Iconic Superheroes to Fearsome Monsters, Discover a Vast Collection of Action Figures that Bring Excitement and Imagination to Life. Get Ready to Play, Imagine, and Conquer!"
           </p>
           <div>
           <button className="btn btn-active bg-[#FF3811] mr-5">Discover More</button>
