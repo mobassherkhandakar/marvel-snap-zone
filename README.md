@@ -1,13 +1,13 @@
 # GoFood Starter Repository
-1.Recipe Collection: A diverse collection of recipes that cater to different dietary preferences, cuisines, and meal types (breakfast, lunch, dinner, snacks, etc.). Each recipe should be easy to follow, with clear ingredient lists and step-by-step instructions.
+1.Description: Provide a brief overview of the toy website, highlighting its purpose, target audience, and the types of toys available.
 
-2.Kitchen Tips & Techniques: A section dedicated to providing helpful tips, tricks, and techniques to make cooking easier and more enjoyable. This could include how-to videos, cooking hacks, ingredient substitutions, and more.
+2.Installation: If the toy website is open-source and can be set up locally, provide instructions on how to clone the repository and run the website on a local development environment.
 
-3.Product Reviews: An unbiased review of various kitchen tools, appliances, and food products that are relevant to the website's audience. This section can provide honest feedback, recommendations, and comparisons to help visitors make informed purchasing decisions.
+3.Features: Highlight the key features of the toy website, such as browsing and searching for toys, adding items to a cart, creating an account, and accessing customer support.
 
-4.Food Blog: A blog section that covers a variety of food-related topics, such as food trends, health and nutrition, seasonal recipes, and interviews with chefs and food bloggers. This can help build a community around the website and provide engaging content for visitors to enjoy.
+4.Technologies Used: List the technologies, frameworks, and libraries used to develop the toy website. This could include programming languages, web development frameworks, databases, and any external APIs or services utilized.
 
-5.User Feedback: A feature that allows visitors to rate and review recipes, products, and content on the website. This can help build trust and credibility with the website's audience and provide valuable feedback for the website's creators to improve their content and offerings.
+5.Contributing: Encourage contributions from the community by providing guidelines on how developers can contribute to the toy website's codebase. Include instructions on how to submit bug reports, feature requests, or pull requests.
 
 ## Live Link
 Hosted in Firebase -> [GoFood](https://toy-marketplace-701fa.web.app/)
